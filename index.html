@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carolina & Harry - Participación de Matrimonio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: #F9F0E1;
+            color: #90674D;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Sections */
+        .section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        /* Video background */
+        .video-bg {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: -2;
+            opacity: 0.75;
+        }
+
+        /* Light overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(249, 240, 225, 0.2);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+            max-width: 700px;
+            animation: fadeIn 1.5s ease-out;
+            padding: 2.5rem 2rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .parents-announcement {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #6B4E3D;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        .parents-names {
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: #2e3a1f;
+        }
+
+        .participan {
+            font-style: italic;
+            color: #90674D;
+        }
+
+        .names {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            color: #2e3a1f;
+        }
+
+        .ampersand {
+            font-size: 4.5rem;
+            font-style: italic;
+            font-weight: 300;
+            color: #C99985;
+            display: block;
+            margin: 0.3rem 0;
+        }
+
+        .date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #6B4E3D;
+            letter-spacing: 0.02em;
+        }
+
+        .location {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 0.1rem;
+            color: #90674D;
+        }
+
+        .lang-toggle {
+            margin-top: 2.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.95rem;
+            color: #90674D;
+            opacity: 0.7;
+        }
+
+        .lang-toggle button {
+            background: none;
+            border: none;
+            color: inherit;
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-size: inherit;
+            border-bottom: 1px solid transparent;
+        }
+
+        .lang-toggle button:hover {
+            color: #6B4E3D;
+            border-bottom-color: #C99985;
+        }
+
+        .lang-toggle button.active {
+            color: #6B4E3D;
+            font-weight: 500;
+            border-bottom-color: #C99985;
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: #C99985;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            animation: bounce 2s ease-in-out infinite;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            stroke: #C99985;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* Gift Section */
+        .gift-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: #2e3a1f;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .gift-section .section-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #C99985;
+            margin-bottom: 2rem;
+            text-align: center;
+            max-width: 500px;
+        }
+
+        .gift-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 16px;
+            padding: 2.5rem;
+            max-width: 550px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(144, 103, 77, 0.1);
+        }
+
+        .gift-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: rgba(201, 153, 133, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gift-icon svg {
+            width: 35px;
+            height: 35px;
+            stroke: #90674D;
+            fill: none;
+        }
+
+        .gift-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #2e3a1f;
+            margin-bottom: 1rem;
+        }
+
+        .gift-card p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            color: #90674D;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .gift-card .gift-note {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: #C99985;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(201, 153, 133, 0.3);
+        }
+
+        .gift-btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            background-color: #C99985;
+            color: #fff;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .gift-btn:hover {
+            background-color: #6B4E3D;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(144, 103, 77, 0.3);
+        }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+            .parents-announcement {
+                font-size: 1.1rem;
+            }
+
+            .parents-names {
+                font-size: 1.2rem;
+            }
+
+            .names {
+                font-size: 2.8rem;
+            }
+
+            .ampersand {
+                font-size: 3rem;
+            }
+
+            .date {
+                font-size: 1.2rem;
+            }
+
+            .location {
+                font-size: 1rem;
+            }
+
+            .gift-section h2 {
+                font-size: 2rem;
+            }
+
+            .gift-card {
+                padding: 1.5rem;
+                margin: 0 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Video Background -->
+    <video class="video-bg" autoplay muted loop playsinline id="bgVideo">
+        <source src="bg-video3.mp4" type="video/mp4">
+    </video>
+
+    <!-- Hero Section -->
+    <section class="section hero-section" id="home">
+        <div class="container">
+            <p class="parents-announcement">
+                <span class="parents-names">Carlos Alberto Ferreira Sandino</span><br>
+                <span data-en="and" data-es="y">y</span><br>
+                <span class="parents-names">Angela Maria Atuesta Maldonado</span><br><br>
+                <span class="participan" data-en="are pleased to announce the marriage of their daughter" data-es="participan a usted el matrimonio de su hija">participan a usted el matrimonio de su hija</span>
+            </p>
+
+            <h1 class="names">
+                <span>Carolina</span>
+                <span class="ampersand">&</span>
+                <span>Harry</span>
+            </h1>
+
+            <p class="date" data-en="Sunday, October 18th, 2026" data-es="Domingo, 18 de octubre de 2026">Domingo, 18 de octubre de 2026</p>
+            <p class="location" data-en="Madrid, Spain" data-es="Madrid, España">Madrid, España</p>
+
+            <div class="lang-toggle">
+                <button data-lang="en">English</button>
+                <span>/</span>
+                <button class="active" data-lang="es">Español</button>
+            </div>
+        </div>
+
+        <a href="#gift" class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- Gift / Art Fund Section -->
+    <section class="section gift-section" id="gift">
+        <h2 data-en="Wedding Gift" data-es="Regalo de Boda">Regalo de Boda</h2>
+        <p class="section-subtitle" data-en="Your presence is our greatest gift" data-es="Su presencia es nuestro mejor regalo">Su presencia es nuestro mejor regalo</p>
+
+        <div class="gift-card">
+            <div class="gift-icon">
+                <svg viewBox="0 0 24 24" stroke-width="1.5">
+                    <rect x="3" y="8" width="18" height="13" rx="2"/>
+                    <path d="M12 8V21"/>
+                    <path d="M3 12h18"/>
+                    <path d="M12 8c-2-3-6-3-6 0s4 0 6-3"/>
+                    <path d="M12 8c2-3 6-3 6 0s-4 0-6-3"/>
+                </svg>
+            </div>
+            <h3 data-en="Art Fund" data-es="Fondo de Arte">Fondo de Arte</h3>
+            <p data-en="Instead of a traditional gift registry, we're creating an art fund to find a special piece for our home together. Your contribution, in any amount, will help us choose a meaningful artwork that will remind us of this day and all of you." data-es="En lugar de una lista de bodas tradicional, estamos creando un fondo de arte para encontrar una pieza especial para nuestro hogar. Su contribución, en la cantidad que deseen, nos ayudará a elegir una obra de arte significativa que nos recordará este día y a todos ustedes.">En lugar de una lista de bodas tradicional, estamos creando un fondo de arte para encontrar una pieza especial para nuestro hogar. Su contribución, en la cantidad que deseen, nos ayudará a elegir una obra de arte significativa que nos recordará este día y a todos ustedes.</p>
+            <p class="gift-note" data-en="All contributions are anonymous — give whatever feels right to you." data-es="Todas las contribuciones son anónimas — aporta lo que te parezca bien.">Todas las contribuciones son anónimas — aporta lo que te parezca bien.</p>
+            <a href="#" class="gift-btn" data-en="Contribute to Art Fund" data-es="Contribuir al Fondo de Arte">Contribuir al Fondo de Arte</a>
+        </div>
+    </section>
+
+    <script>
+        function setLanguage(lang, updateUrl = false) {
+            document.querySelectorAll('.lang-toggle button').forEach(b => {
+                b.classList.toggle('active', b.dataset.lang === lang);
+            });
+
+            document.querySelectorAll('[data-en]').forEach(el => {
+                el.innerHTML = el.dataset[lang];
+            });
+
+            document.documentElement.lang = lang;
+
+            if (updateUrl) {
+                const url = new URL(window.location);
+                if (lang === 'en') {
+                    url.searchParams.set('en', '');
+                } else {
+                    url.searchParams.delete('en');
+                }
+                window.history.replaceState({}, '', url);
+            }
+        }
+
+        // Default to Spanish, check URL for ?en parameter for English
+        if (window.location.search.includes('en')) {
+            setLanguage('en');
+        } else {
+            setLanguage('es');
+        }
+
+        document.querySelectorAll('.lang-toggle button').forEach(btn => {
+            btn.addEventListener('click', () => setLanguage(btn.dataset.lang, true));
+        });
+
+        // Video speed
+        document.getElementById('bgVideo').playbackRate = 0.85;
+    </script>
+
+</body>
+
+</html>
