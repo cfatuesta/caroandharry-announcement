@@ -122,9 +122,9 @@
         .names {
             text-transform: uppercase;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 3.2rem;
+            font-size: 2.4rem;
             font-weight: 500;
-            line-height: 0.95;
+            line-height: 1.1;
             margin-bottom: 1.5rem;
             color: #2e3a1f;
             display: flex;
@@ -134,17 +134,15 @@
         }
 
         .ampersand {
-            font-size: 4rem;
+            font-size: 3rem;
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
             font-weight: 300;
             color: #C99985;
-            margin: 0.0em 0 0.05em 0.05em;
-            display: inline-block;
-            position: absolute;
-            top: 10.5rem;
-            left: -3.5rem;
-            z-index: 2;
+            margin: 0.2rem 0;
+            position: relative;
+            top: auto;
+            left: auto;
         }
 
         .vertical-line {
@@ -160,16 +158,6 @@
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            width: 1px;
-            height: 10.5rem;
-            background-color: #C99985;
-        }
-
-        .vertical-line::after {
-            content: '';
-            position: absolute;
-            top: 14rem;
             left: 0;
             width: 1px;
             bottom: 0;
@@ -368,25 +356,15 @@
             }
 
             .names {
-                font-size: 1.8rem;
+                font-size: 1.4rem;
             }
 
             .ampersand {
-                font-size: 2.2rem;
-                top: 9rem;
-                left: 0rem;
+                font-size: 1.8rem;
             }
 
             .vertical-line {
                 left: 1.5rem;
-            }
-
-            .vertical-line::before {
-                height: 9rem;
-            }
-
-            .vertical-line::after {
-                top: 11.5rem;
             }
 
             .date {
