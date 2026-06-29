@@ -19,6 +19,9 @@
 
         html {
             font-size: 16px;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
 
@@ -29,9 +32,10 @@
             line-height: 1.6;
             position: relative;
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
-        /* Sections */
+        /* Section */
         .section {
             min-height: 100vh;
             display: flex;
@@ -105,22 +109,6 @@
             }
         }
 
-        .parents-announcement {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: #6B4E3D;
-            line-height: 1.0;
-            margin-bottom: 2rem;
-        }
-
-        .parents-names {
-            font-weight: 600;
-            font-size: 1.5rem;
-            color: #2e3a1f;
-            display: block;
-        }
-
         .parents-line {
             display: block;
             font-family: 'Cormorant Garamond', serif;
@@ -186,40 +174,6 @@
             font-weight: 500;
             letter-spacing: 0.1rem;
             color: #90674D;
-        }
-
-        .lang-toggle {
-            margin-top: 2.5rem;
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 0.95rem;
-            color: #90674D;
-            opacity: 0.7;
-        }
-
-        .lang-toggle button {
-            background: none;
-            border: none;
-            color: inherit;
-            cursor: pointer;
-            padding: 0;
-            transition: all 0.3s ease;
-            font-family: inherit;
-            font-size: inherit;
-            border-bottom: 1px solid transparent;
-        }
-
-        .lang-toggle button:hover {
-            color: #6B4E3D;
-            border-bottom-color: #C99985;
-        }
-
-        .lang-toggle button.active {
-            color: #6B4E3D;
-            font-weight: 500;
-            border-bottom-color: #C99985;
         }
 
         /* Scroll indicator */
@@ -345,6 +299,85 @@
             box-shadow: 0 4px 15px rgba(144, 103, 77, 0.3);
         }
 
+        .gift-card .gift-intro {
+            font-size: 1.05rem;
+            color: #6B4E3D;
+            line-height: 1.7;
+            margin-bottom: 0.5rem;
+        }
+
+        .gift-card .gift-soft {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: #C99985;
+            margin-bottom: 1.75rem;
+        }
+
+        .bank-blocks {
+            margin-top: 1.75rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(201, 153, 133, 0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        .bank-block {
+            text-align: left;
+        }
+
+        .bank-block-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: #C99985;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .bank-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed rgba(201, 153, 133, 0.25);
+            font-size: 0.98rem;
+        }
+
+        .bank-row:last-child {
+            border-bottom: none;
+        }
+
+        .bank-label {
+            color: #90674D;
+            font-style: italic;
+            white-space: nowrap;
+        }
+
+        .bank-value {
+            color: #2e3a1f;
+            font-weight: 500;
+            text-align: right;
+            word-break: break-word;
+        }
+
+        .bank-value.mono {
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.02em;
+            font-weight: 500;
+        }
+
+        .gift-reference {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #C99985;
+            text-align: center;
+            margin-top: 1.25rem;
+        }
+
         /* Mobile */
         @media (max-width: 768px) {
             .parents-left,
@@ -426,21 +459,15 @@
         </div>
 
         <main class="container">
-            <p class="participan" data-en="are pleased to announce the marriage of their children" data-es="participan a usted en el matrimonio de sus hijos">participan a usted en el matrimonio de sus hijos</p>
+            <p class="participan">tienen el honor de participarles el matrimonio de sus hijos</p>
 
             <h1 class="names">
                 Carolina <span class="ampersand">&</span> Harry
             </h1>
 
             <div class="date-location-block">
-                <p class="date" data-en="Sunday, October 18th, 2026" data-es="Domingo, 18 de octubre de 2026">Domingo, 18 de octubre de 2026</p>
-                <p class="location" data-en="Madrid, Spain" data-es="Madrid, España">Madrid, España</p>
-            </div>
-
-            <div class="lang-toggle">
-                <button data-lang="en">English</button>
-                <span>/</span>
-                <button class="active" data-lang="es">Español</button>
+                <p class="date">Domingo, 18 de octubre de 2026</p>
+                <p class="location">Madrid, España</p>
             </div>
         </main>
 
@@ -453,8 +480,8 @@
 
     <!-- Gift / Art Fund Section -->
     <section class="section gift-section" id="gift">
-        <h2 data-en="Wedding Gift" data-es="Regalo de Boda">Regalo de Boda</h2>
-        <p class="section-subtitle" data-en="Your presence is our greatest gift" data-es="Su presencia es nuestro mejor regalo">Su presencia es nuestro mejor regalo</p>
+        <h2>Regalo de Boda</h2>
+        <p class="section-subtitle">Su presencia es nuestro mejor regalo</p>
 
         <div class="gift-card">
             <div class="gift-icon">
@@ -466,47 +493,77 @@
                     <path d="M12 8c2-3 6-3 6 0s-4 0-6-3"/>
                 </svg>
             </div>
-            <h3 data-en="Art Fund" data-es="Fondo de Arte">Fondo de Arte</h3>
-            <p data-en="Instead of a traditional gift registry, we're creating an art fund to find a special piece for our home together. Your contribution, in any amount, will help us choose a meaningful artwork that will remind us of this day and all of you." data-es="En lugar de una lista de bodas tradicional, estamos creando un fondo de arte para encontrar una pieza especial para nuestro hogar. Su contribución, en la cantidad que deseen, nos ayudará a elegir una obra de arte significativa que nos recordará este día y a todos ustedes.">En lugar de una lista de bodas tradicional, estamos creando un fondo de arte para encontrar una pieza especial para nuestro hogar. Su contribución, en la cantidad que deseen, nos ayudará a elegir una obra de arte significativa que nos recordará este día y a todos ustedes.</p>
-            <p class="gift-note" data-en="All contributions are anonymous — give whatever feels right to you." data-es="Todas las contribuciones son anónimas — aporta lo que te parezca bien.">Todas las contribuciones son anónimas — aporta lo que te parezca bien.</p>
-            <a href="#" class="gift-btn" data-en="Contribute to Art Fund" data-es="Contribuir al Fondo de Arte">Contribuir al Fondo de Arte</a>
+            <h3>Fondo de Arte</h3>
+            <p class="gift-intro">Su compañía y sus buenos deseos son nuestro mejor regalo. Aun así, hemos creado un fondo de arte por si desean acompañarnos con un detalle. Con él adquiriremos una obra para nuestra casa que nos recordará este día y a todos ustedes.</p>
+            <p class="gift-soft">A continuación dejamos los datos.</p>
+
+            <div class="bank-blocks">
+                <div class="bank-block">
+                    <div class="bank-block-title">Transferencia en Euros</div>
+                    <div class="bank-row">
+                        <span class="bank-label">Beneficiario</span>
+                        <span class="bank-value">Carolina Ferreira Atuesta</span>
+                    </div>
+                    <div class="bank-row">
+                        <span class="bank-label">Cuenta</span>
+                        <span class="bank-value mono">215911201246</span>
+                    </div>
+                    <div class="bank-row">
+                        <span class="bank-label">BIC / SWIFT</span>
+                        <span class="bank-value mono">REVOUS31</span>
+                    </div>
+                    <div class="bank-row">
+                        <span class="bank-label">Banco</span>
+                        <span class="bank-value">Revolut</span>
+                    </div>
+                </div>
+
+                <div class="bank-block">
+                    <div class="bank-block-title">Transferencia en Dólares</div>
+                    <div class="bank-row">
+                        <span class="bank-label">Beneficiario</span>
+                        <span class="bank-value">Carolina Ferreira Atuesta</span>
+                    </div>
+                    <div class="bank-row">
+                        <span class="bank-label">Cuenta</span>
+                        <span class="bank-value mono">215911201246</span>
+                    </div>
+                    <div class="bank-row">
+                        <span class="bank-label">BIC / SWIFT</span>
+                        <span class="bank-value mono">REVOUS31</span>
+                    </div>
+                    <div class="bank-row">
+                        <span class="bank-label">Routing (ACH / Wire)</span>
+                        <span class="bank-value mono">101019644</span>
+                    </div>
+                    <div class="bank-row">
+                        <span class="bank-label">Banco</span>
+                        <span class="bank-value">Lead Bank · Kansas City, MO</span>
+                    </div>
+                </div>
+
+                <div class="bank-block">
+                    <div class="bank-block-title">Colombia · Pesos</div>
+                    <div class="bank-row">
+                        <span class="bank-label">Beneficiario</span>
+                        <span class="bank-value">Carolina Ferreira Atuesta</span>
+                    </div>
+                    <div class="bank-row">
+                        <span class="bank-label">Banco</span>
+                        <span class="bank-value">Davivienda</span>
+                    </div>
+                    <div class="bank-row">
+                        <span class="bank-label">Llave Bre-B</span>
+                        <span class="bank-value mono">3158998009</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="gift-reference">Si lo desean, pueden incluir su nombre como referencia.<br>Para cualquier consulta: <a href="mailto:caroharrywedding@gmail.com" style="color:#6B4E3D; text-decoration:none; border-bottom:1px solid #C99985;">caroharrywedding@gmail.com</a></p>
         </div>
     </section>
 
     <script>
-        function setLanguage(lang, updateUrl = false) {
-            document.querySelectorAll('.lang-toggle button').forEach(b => {
-                b.classList.toggle('active', b.dataset.lang === lang);
-            });
-
-            document.querySelectorAll('[data-en]').forEach(el => {
-                el.innerHTML = el.dataset[lang];
-            });
-
-            document.documentElement.lang = lang;
-
-            if (updateUrl) {
-                const url = new URL(window.location);
-                if (lang === 'en') {
-                    url.searchParams.set('en', '');
-                } else {
-                    url.searchParams.delete('en');
-                }
-                window.history.replaceState({}, '', url);
-            }
-        }
-
-        // Default to Spanish, check URL for ?en parameter for English
-        if (window.location.search.includes('en')) {
-            setLanguage('en');
-        } else {
-            setLanguage('es');
-        }
-
-        document.querySelectorAll('.lang-toggle button').forEach(btn => {
-            btn.addEventListener('click', () => setLanguage(btn.dataset.lang, true));
-        });
-
         // Video speed
         document.getElementById('bgVideo').playbackRate = 0.85;
     </script>
